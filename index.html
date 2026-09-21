@@ -1,0 +1,729 @@
+<!DOCTYPE ht<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Villa General Belgrano</title>
+
+<style>
+
+/* ================= GENERAL ================= */
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Arial, sans-serif;
+scroll-behavior: smooth;
+}
+
+body {
+background-color: #829C6C;
+color: #829C6C;
+}
+
+.main {
+width: 90%;
+max-width: 1100px;
+margin: 60px auto;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+.navbar {
+height: 68px;
+border: 1.5px solid white;
+border-radius: 40px;
+display: flex;
+align-items: center;
+padding: 8px 14px;
+margin-bottom: 40px;
+position: sticky;
+top: 15px;
+z-index: 100;
+background-color: #829C6C;
+}
+
+.logo {
+width: 150px;
+height: 52px;
+background-color: #D9A8D6;
+border-radius: 35px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+color: white;
+font-size: 17px;
+}
+
+.menu {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+gap: 12px;
+width: 100%;
+}
+
+.menu a {
+text-decoration: none;
+color: white;
+border: 1.5px solid white;
+border-radius: 30px;
+padding: 10px 19px;
+font-size: 15px;
+transition: 0.3s;
+}
+
+.menu a:hover {
+background-color: white;
+color: #829C6C;
+}
+
+
+/* ================= FESTIVALS ================= */
+
+.festivals {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 35px;
+}
+
+.card {
+background-color: white;
+border-radius: 55px;
+min-height: 265px;
+padding: 25px;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+
+text-align: center;
+}
+
+.card h2 {
+font-size: 18px;
+margin-bottom: 8px;
+color: #829C6C;
+}
+
+.card p {
+color: #829C6C;
+font-size: 16px;
+line-height: 1.45;
+}
+
+
+/* ================= CAROUSEL ================= */
+
+.carousel {
+margin-top: 40px;
+
+background-color: white;
+
+border: 1.5px solid #D9A8D6;
+border-radius: 35px;
+
+padding: 35px 65px 25px;
+
+position: relative;
+overflow: hidden;
+}
+
+.slider {
+width: 100%;
+overflow: hidden;
+border-radius: 10px;
+}
+
+.slides {
+display: flex;
+
+transition:
+transform 0.5s ease-in-out;
+}
+
+.slide {
+min-width: 100%;
+
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.slide img {
+width: 95%;
+height: 380px;
+
+object-fit: cover;
+
+border-radius: 10px;
+}
+
+
+/* ================= ARROWS ================= */
+
+.arrow {
+position: absolute;
+
+top: 50%;
+
+transform: translateY(-50%);
+
+width: 48px;
+height: 48px;
+
+border: none;
+border-radius: 50%;
+
+background-color: #829C6C;
+color: white;
+
+font-size: 26px;
+
+cursor: pointer;
+
+z-index: 5;
+
+transition: 0.3s;
+}
+
+.arrow:hover {
+background-color: #6F895A;
+}
+
+.left {
+left: 12px;
+}
+
+.right {
+right: 12px;
+}
+
+
+/* ================= DOTS ================= */
+
+.dots {
+text-align: center;
+
+margin-top: 15px;
+}
+
+.dot {
+display: inline-block;
+
+width: 11px;
+height: 11px;
+
+margin: 4px;
+
+border-radius: 50%;
+
+background-color: #D9A8D6;
+
+cursor: pointer;
+}
+
+.dot.active {
+background-color: #829C6C;
+}
+
+
+/* ================= EXTRA SECTIONS ================= */
+
+.section {
+background-color: white;
+
+border-radius: 45px;
+
+padding: 45px;
+
+margin-top: 40px;
+
+text-align: center;
+}
+
+.section h2 {
+margin-bottom: 15px;
+font-size: 24px;
+}
+
+.section p {
+font-size: 17px;
+line-height: 1.6;
+}
+
+
+/* ================= BOTTOM ================= */
+
+.bottom {
+height: 60px;
+
+border: 1.5px solid white;
+
+border-radius: 40px;
+
+margin-top: 30px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 800px) {
+
+.main {
+width: 94%;
+margin: 25px auto;
+}
+
+.navbar {
+height: auto;
+flex-direction: column;
+gap: 10px;
+padding: 12px;
+}
+
+.logo {
+width: 100%;
+}
+
+.menu {
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.menu a {
+padding: 8px 13px;
+}
+
+.festivals {
+grid-template-columns: 1fr;
+}
+
+.carousel {
+padding: 25px 45px 20px;
+}
+
+.slide img {
+width: 100%;
+height: 280px;
+}
+
+.section {
+padding: 30px 20px;
+}
+
+}
+
+
+/* ================= LARGE SCREENS ================= */
+
+@media (min-width: 1200px) {
+
+.carousel {
+padding-left: 70px;
+padding-right: 70px;
+}
+
+.slide img {
+height: 420px;
+}
+.footer { text-align: center; padding: 15px; background: #152717; color: white; font-size: 12px; }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="main">
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav class="navbar" id="home">
+
+<div class="logo">
+welcome
+</div>
+
+<div class="menu">
+
+<a href="#home">Home</a>
+
+<a href="#about">About Us</a>
+
+<a href="#services">Services</a>
+
+<a href="#portfolio">Portfolio</a>
+
+<a href="#process">Process</a>
+
+<a href="#contact">Contact</a>
+
+<a href="#closing">Closing</a>
+
+</div>
+
+</nav>
+
+
+
+<!-- ================= ABOUT US ================= -->
+
+<section class="festivals" id="about">
+
+
+<div class="card">
+
+<h2>
+Fiesta de la Masa Vienesa
+</h2>
+
+<p>
+The Fiesta de la Masa Vienesa is a traditional festival
+held in Villa General Belgrano. It celebrates Central
+European pastry and baking traditions, with cakes,
+strudels, pastries and homemade bread as the main
+attractions.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+Summerfest
+</h2>
+
+<p>
+Summerfest is Villa General Belgrano's traditional
+summer festival. It takes place during January and
+February and includes live music, traditional dances,
+food and outdoor activities in a fun and family-friendly
+atmosphere.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>
+Oktoberfest
+</h2>
+
+<p>
+Oktoberfest is the most famous festival in Villa General
+Belgrano and is known as the National Beer Festival.
+It celebrates Central European traditions with music,
+food, dances and cultural activities.
+</p>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section" id="services">
+
+<h2>
+Services
+</h2>
+
+<p>
+Discover the main festivals, cultural activities,
+traditions and experiences that Villa General Belgrano
+has to offer throughout the year.
+</p>
+
+</section>
+
+
+
+<!-- ================= PORTFOLIO / CAROUSEL ================= -->
+
+<section class="carousel" id="portfolio">
+
+
+<button
+class="arrow left"
+onclick="previousSlide()">
+
+&#10094;
+
+</button>
+
+
+<div class="slider">
+
+<div class="slides" id="slides">
+
+
+<!--
+CHANGE THESE IMAGE NAMES
+TO YOUR OWN PHOTOS
+-->
+
+
+<div class="slide">
+
+<img
+src="img/1-1024x683.webp"
+alt="Fiesta de la Masa Vienesa">
+
+</div>
+
+
+<div class="slide">
+
+<img
+src="img/multimedia.normal.8e393fcf19bf1074.524547494f4e204f424a455449564f20464f544f20564742204d4153412056495f6e6f726d616c2e77656270.webp"
+alt="Summerfest">
+
+</div>
+
+
+<div class="slide">
+
+<img
+src="img/images.jfif"
+alt="Oktoberfest">
+
+</div>
+
+
+<
+
+
+</div>
+
+</div>
+
+
+<button
+class="arrow right"
+onclick="nextSlide()">
+
+&#10095;
+
+</button>
+
+
+
+<!-- DOTS -->
+
+<div class="dots">
+
+<span
+class="dot active"
+onclick="goToSlide(0)">
+</span>
+
+<span
+class="dot"
+onclick="goToSlide(1)">
+</span>
+
+<span
+class="dot"
+onclick="goToSlide(2)">
+</span>
+
+<span
+class="dot"
+onclick="goToSlide(3)">
+</span>
+
+<span
+class="dot"
+onclick="goToSlide(4)">
+</span>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ================= PROCESS ================= -->
+
+<section class="section" id="process">
+
+<h2>
+Process
+</h2>
+
+<p>
+Explore Villa General Belgrano step by step, discover
+its festivals and learn more about the traditions,
+activities and events that make the town special.
+</p>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section" id="contact">
+
+<h2>
+Contact
+</h2>
+
+<p>
+For more information about Villa General Belgrano,
+its festivals and activities, you can contact the
+local tourism information center.
+</p>
+
+</section>
+
+
+
+<!-- ================= CLOSING ================= -->
+
+<section class="section" id="closing">
+
+<h2>
+Thank You
+</h2>
+
+<p>
+Thank you for visiting our Villa General Belgrano
+website. We hope you enjoy discovering everything
+this beautiful town has to offer.
+</p>
+
+</section>
+
+
+
+<!-- ================= BOTTOM ================= -->
+
+<div class="bottom"></div>
+
+
+</div>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+let currentSlide = 0;
+
+const slides =
+document.getElementById("slides");
+
+const dots =
+document.querySelectorAll(".dot");
+
+const totalSlides =
+document.querySelectorAll(".slide").length;
+
+
+
+function updateSlide() {
+
+slides.style.transform =
+"translateX(-" +
+(currentSlide * 100) +
+"%)";
+
+
+dots.forEach(function(dot, index) {
+
+dot.classList.remove("active");
+
+
+if (index === currentSlide) {
+
+dot.classList.add("active");
+
+}
+
+});
+
+}
+
+
+
+function nextSlide() {
+
+currentSlide++;
+
+if (currentSlide >= totalSlides) {
+
+currentSlide = 0;
+
+}
+
+updateSlide();
+
+}
+
+
+
+function previousSlide() {
+
+currentSlide--;
+
+if (currentSlide < 0) {
+
+currentSlide =
+totalSlides - 1;
+
+}
+
+updateSlide();
+
+}
+
+
+
+function goToSlide(number) {
+
+currentSlide = number;
+
+updateSlide();
+
+}
+
+
+
+/* AUTOMATIC CAROUSEL */
+
+setInterval(function() {
+
+nextSlide();
+
+}, 4000);
+
+
+</script>
+
+
+</body>
+<footer id="closing" class="footer">
+  <p>© 2026 Eva Tobler, Pia Centurion, Mariana Gutierrez </p>
+</footer>
+
+
+</html>
